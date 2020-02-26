@@ -1,22 +1,35 @@
 package FirstGame;
+import java.util.Random;
+import java.util.Scanner;
+
 public class Matrix {
     public static void main(String[] args) {
-        int[][] a = {{1, 2, 3, 4, 1},
-                    {4, 5, 6, 1, 7},
-                    {7, 8, 1, 12, 9},
-                    {5, 100, 10, 20, 10},
-                    {1, 7, 10, 20, 10}};
-        int s = 0;
-        int b = 0;
-        int c = 0;
-        int n = a.length;
-        for (int i = 0; i < n; ++i) {
-                b += a[i][i];
-                s += a[i] [n-1-i];
+        Random ran = new Random();
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите размер массива: ");
+        int w = in.nextInt();
+        int q = in.nextInt();
+        int[][] a = new int[w][q];
+
+
+        for (int i = 0; i < w; i++) {
+            for (int j = 0; j < q; j++) {
+                a[i][j] = ran.nextInt(9);
+                System.out.print(a[i][j]);
+                System.out.println(" ");
+            }
+        }
+            int s = 0;
+            int b = 0;
+            int c = 0;
+            int n = a.length;
+            for (int f = 0; f < n; ++f) {
+                b += a[f][f];
+                s += a[f][n - 1 - f];
             }
             c = b + s;
             System.out.println(s);
-                System.out.println(b);
-                    System.out.println(c);
+            System.out.println(b);
+            System.out.println(c);
         }
     }
